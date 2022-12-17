@@ -1,0 +1,169 @@
+<form class="post-listing-form" method="post" action="/listings/" enctype="multipart/form-data">
+
+    <div class="form-wrapper">
+        <div class="form-postlisting">
+            {{!-- <form action=""> --}}
+                <h1 class="title" style="font-family:Montserrat" style="text-align:center">Post Listing</h1>
+                
+                <div class="Post-one">
+                    <p for="street_num" class="Label-btn"><b>Listing Image</b></p>
+                    <input name="pic" type="file">
+                    {{!-- <p>Drag your Image files here or click in this area.</p> --}}
+                    {{!-- <button type="submit">Upload</button> --}}
+                </div>
+
+
+                <div class="Post-one">
+                    <p for="street_num" class="Label-btn"><b>Street Number</b></p>
+                    <input class="input1" type="text" placeholder="Enter Street Number" name="street_num" required>
+                </div>
+                <div class="Post-one">
+                    <p for="street_name" class="Label-btn"><b>Street Name</b></p>
+                    <input class="input1" type="text" placeholder="Enter Street Name" name="street_name" required>
+                </div>
+                <div class="Post-one">
+                    <p for="City" class="Label-btn"><b>City</b></p>
+                    <input class="input1" type="text" placeholder="Enter City" name="city" required>
+                </div>
+                <div class="Post-one">
+                    <p for="state" class="Label-btn"><b>State</b></p>
+                    <input class="input1" type="text" placeholder="Enter State" name="state" required>
+                </div>
+                <div class="Post-one">
+                    <p for="Zipcode" class="Label-btn"><b>Zip Code</b></p>
+                    <input class="input1" type="text" placeholder="Enter Zip Code" name="zipcode" required>
+                </div>
+                <div class="Post-one">
+                    <p for="Bed" class="Label-btn"><b>Bed</b></p>
+                    <input class="input1" type="text" placeholder="Enter Number of Beds" name="bed" required>
+                </div>
+                <div class="Post-one">
+                    <p for="Bath" class="Label-btn"><b>Bath</b></p>
+                    <input class="input1" type="text" placeholder="Enter Number of Bathrooms" name="bath" required>
+                </div>
+                <div class="Post-one">
+                    <p for="Price" class="Label-btn"><b>Price</b></p>
+                    <input class="input1" type="text" placeholder="Enter Price in US dollars" name="price" required>
+                </div>
+                <div class="Post-one">
+                    <p for="description" class="Label-btn"><b>Description</b></p>
+                    <textarea placeholder="Enter Description" name="description"></textarea>
+                </div>
+                <div class="Post-button">
+                    <button id="Post-button" type="submit" class="btn">Post</button>
+
+                </div>
+                {{!--
+            </form> --}}
+
+
+        </div>
+    </div>
+
+</form>
+
+<style>
+    .post-listing-form {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        margin-bottom: 40px;
+        background-color: #f8f8f8;
+        padding: 20px;
+        border-radius: 10px;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .form-postlisting {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 40px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: black;
+        font-family: inherit;
+        font-style: normal;
+        font-weight: 400px;
+    }
+
+    .upload-image {
+        margin-bottom: 10px;
+    }
+
+    .upload-image input[type="file"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .Post-one {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .Post-one .Label-btn {
+        margin-bottom: 5px;
+    }
+
+    .Post-one input[type="text"],
+     .Post-one input[type="file"],
+    .Post-one textarea {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .Post-one textarea {
+        height: 100px;
+        resize: none;
+    }
+
+    .Post-button {
+        text-align: center;
+    }
+
+    .Post-button button {
+        width: 30%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .Post-button button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+
+<script>
+    $(document).ready(function () {
+        $('form input').change(function () {
+            $('form p').text(this.files.length + " file(s) selected");
+        });
+    });
+</script>

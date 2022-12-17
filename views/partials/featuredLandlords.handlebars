@@ -1,0 +1,19 @@
+<div class="featured-landlords">
+    {{#each this}}
+    {{log this}}
+    <a class="featured-landlord" id="featured-landlord-1" href="users/profilePage/{{landlordId}}">
+        <div class="featured-landlord-left">
+            <img class="landlord-picture" src={{profilePicture}}>
+            <p class="landlord-name">{{firstName}} {{lastName}}</p>
+        </div>
+        <div class="featured-landlord-right">
+            <div class="landlord-info">
+                {{> rating rating}}
+                <div class="bio">
+                    {{bio}}
+                </div>
+            </div>
+        </div>
+    </a>
+    {{/each}}
+</div>

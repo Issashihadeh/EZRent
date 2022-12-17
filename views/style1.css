@@ -1,0 +1,271 @@
+.open-body{
+    margin: 0;
+    padding: 100px;
+    background: url(pic1.jpg) no-repeat center; 
+     background-size: cover; 
+     background-position: center; 
+    font-family: sans-serif;
+}
+
+.Overbox{
+    height: 70vh;
+    /* width:90vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+.form-registration{
+
+    position: relative;
+    width:100%;
+    max-width: 380px;
+    padding: 80px 40px 40px;
+    background: #1a735d;
+    border-radius: 5%;
+    box-shadow: 0 15px 25px rgba(0,0,0,1);
+}
+.form-login{
+   
+    position: absolute;
+    width:100%;
+    max-width: 380px;
+    padding: 80px 40px 40px;
+    background: #EAEFF2;
+    border-radius: 5%;
+    box-shadow: 0 15px 25px rgba(0,0,0,1);
+}
+.logo{
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+    position: absolute;
+    top: -90px;
+    left: calc(45% - 50px)
+
+}
+h1{
+    
+    margin:0;
+    letter-spacing: 5px;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 48px;
+    color:#EAEFF2;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+}
+h2{
+    
+    margin:0;
+    letter-spacing: 5px;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 48px;
+    color: rgb(83, 131, 104);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+}
+.form-login .input-name input{
+    width: 105%;
+    padding: 0px; 
+    font-size: 2rem;
+     letter-spacing: 1px;
+     border: none;
+    border-bottom: 1px solid #29282872;
+    outline: none;
+    background-color: transparent;
+
+    height: 50px;
+    margin-bottom: 30px;
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.form-registration .input-name input{
+    width: 105%;
+    padding: 0px; 
+    font-size: 1rem;
+     border: none;
+    border-bottom: 1px solid  #EAEFF2;
+    outline: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+
+    height: 50px;
+    margin-bottom: 30px;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.form-registration .input-name ::placeholder{
+    color: black;
+}
+
+.submit-btn-registration{
+    display: inline-block;
+    height: 60px;
+    width:350px;
+    text-align: center;
+    
+    border-radius: 30px;
+    background-color: #EAEFF2;;
+    border: none;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(83, 131, 104);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    /* padding: 20px; */
+}
+
+    .submit-btn{
+        display: inline-block;
+        height: 60px;
+        width:350px;
+        text-align: center;
+        
+        border-radius: 30px;
+        color: #EAEFF2;;
+        border: none;
+        font-size: 40px;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: rgb(83, 131, 104);
+        margin-bottom: 10px;
+        margin-left: 10px;
+        /* padding: 20px; */
+    
+
+}
+.txt-login{
+    color: black;
+    margin-left: 70px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.txt-registration{
+    color: #EAEFF2;
+    margin-left: 70px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.bud-login{
+    color: rgb(83, 131, 104);
+}
+.bud-registration{
+    color:#000000;
+}
+
+.toRegister{
+    border-bottom: 1px solid #2d2e2e;
+    
+}
+.toRegisterr{
+    border-bottom: 1px solid #EAEFF2;
+    
+} 
+
+
+<style>
+
+                    .background{
+                            position: absolute;
+                    top: 15%;
+                    left: 0%;
+                    height: 77%;
+                    width: 100%;
+     
+     
+                     }
+                .form-registration{
+                     align-items: center;
+                    position: absolute;
+                    top: 25%;
+                    left: calc(40% - 50px);
+                    width:480px;
+                    height: 700px;
+                    padding: 80px 40px 40px;
+                   background: #1a735d;
+                    border-radius: 5%;
+                    box-shadow: 0 15px 25px rgba(0,0,0,1);
+                    }
+                    .logo-login{
+                            width: 150px;
+                            height:150px;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: -100px;
+                            left: calc(46% - 50px);
+
+                        }
+                h1{         
+                    position: absolute;
+                    top: 10%;
+                    left: 23%;
+                    text-align: center;
+                    letter-spacing: 5px;
+                    font-size: 68px;
+                    color:  #EAEFF2;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    font-style: oblique;
+                
+                    }
+                    .form-registration .input-name input{
+                        width: 105%;
+                        padding: 0px; 
+                        font-size: 2rem;
+                        letter-spacing: 1px;
+                        border: none;
+                        border-bottom: 1px solid #fff0f072;
+                        outline: none;
+                        background-color: transparent;
+                        color: rgb(255, 249, 249);
+                        height: 50px;
+                        margin-bottom: 30px;
+                        font-size: xx-large;
+                        font-family: 'Courier New', Courier, monospace;
+
+
+                    }
+                    .submit-btn-registration{
+                     position: absolute;
+                    top: 75%;
+                    left: 15%;
+                    display: inline-block;
+                    height: 60px;
+                    width:350px;
+                    text-align: center;
+                    
+                    border-radius: 30px;
+                    color:  rgb(83, 131, 104);
+                    border: none;
+                    font-size: 40px;
+                    font-family: 'Times New Roman', Times, serif;
+                    background-color: #EAEFF2;
+                    margin-bottom: 10px;
+                    margin-left: 10px;
+                    /* padding: 20px; */
+                    }
+
+                .txt-registration{
+                    position: absolute;
+                    top: 85%;
+                    left: 15%;
+                    color: black;
+                    margin-left: 70px;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-weight: bold;
+                }
+                .bud-registration{
+                    color: #EAEFF2;
+                    
+                }
+                .toRegister{
+                   
+                     border-bottom: 2px solid #2d2e2e;
+                     border-bottom-width: 10px;
+                    
+                }

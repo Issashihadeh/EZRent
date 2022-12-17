@@ -1,0 +1,91 @@
+<div id="search_results_main">
+
+    {{log this}}
+    <div id="search_results_filters">
+        <h1 class="filters_header">
+            Filters
+        </h1>
+
+        <form class="filters">
+            <input type="number" placeholder="Min Price" id="min-price" {{#if filters.min}}value="{{filters.min}}"
+                {{/if}}>
+            <input type="number" placeholder="Max Price" id="max-price" {{#if filters.max}}value="{{filters.max}}"
+                {{/if}}>
+
+            <select class="select" id="rating-filter">
+                <option {{#if filters.rating}}{{^}}selected{{/if}}>Rating</option>
+                <option value="> 1" {{#if filters.rating}}{{#equals filters.rating '>1' }} selected{{/equals}}{{/if}}>>
+                    1</option>
+                <option value="> 2" {{#if filters.rating}}{{#equals filters.rating '>2' }} selected{{/equals}}{{/if}}>>
+                    2</option>
+                <option value="> 3" {{#if filters.rating}}{{#equals filters.rating '>3' }} selected{{/equals}}{{/if}}>>
+                    3</option>
+                <option value="> 4" {{#if filters.rating}}{{#equals filters.rating '>4' }} selected{{/equals}}{{/if}}>>
+                    4</option>
+                <option value="5" {{#if filters.rating}}{{#equals filters.rating '5' }} selected{{/equals}}{{/if}}>5
+                </option>
+            </select>
+
+            <select class="select" id="beds-filter">
+                <option {{#if filters.beds}}{{^}}selected{{/if}}>Beds</option>
+                <option value="1" {{#if filters.beds}}{{#equals filters.beds '1' }} selected{{/equals}}{{/if}}>1
+                </option>
+                <option value="2" {{#if filters.beds}}{{#equals filters.beds '2' }} selected{{/equals}}{{/if}}>2
+                </option>
+                <option value="3" {{#if filters.beds}}{{#equals filters.beds '3' }} selected{{/equals}}{{/if}}>3
+                </option>
+                <option value="4" {{#if filters.beds}}{{#equals filters.beds '4' }} selected{{/equals}}{{/if}}>4
+                </option>
+                <option value="> 4" {{#if filters.beds}}{{#equals filters.beds '>4</option>' }}
+                    selected{{/equals}}{{/if}}>> 4</option>
+            </select>
+
+            <select class="select" id="baths-filter">
+                <option {{#if filters.baths}}{{^}}selected{{/if}}>Baths</option>
+                <option value="1" {{#if filters.baths}}{{#equals filters.baths '1' }} selected{{/equals}}{{/if}}>1
+                </option>
+                <option value="2" {{#if filters.baths}}{{#equals filters.baths '2' }} selected{{/equals}}{{/if}}>2
+                </option>
+                <option value="3" {{#if filters.baths}}{{#equals filters.baths '3' }} selected{{/equals}}{{/if}}>3
+                </option>
+                <option value="4" {{#if filters.baths}}{{#equals filters.baths '4' }} selected{{/equals}}{{/if}}>4
+                </option>
+                <option value="> 4" {{#if filters.baths}}{{#equals filters.baths '>4' }} selected{{/equals}}{{/if}}>> 4
+                </option>
+            </select>
+            <input type="button" value="Apply" id="apply-filters-button" />
+        </form>
+    </div>
+    <div id="search_results_card_section">
+        {{!-- <h1 class="listing-results-header">
+            Listings </br>
+            <p id="search-term">{{searchTerm}}</p>
+        </h1> --}}
+        <p id="search-term" style="position:fixed; display:none;">{{searchTerm}}</p>
+        {{#if message}}
+        <div class="result">
+            <p id="search-message">{{message}}</p>
+            Suggested Results:
+        </div>
+        {{else}}
+        <div class="result">
+            Search results for "{{searchTerm}}":
+        </div>
+        {{/if}}
+        <div id="search_results_cards">
+            {{#each results}}
+            {{> listingCard this}}
+            {{/each}}
+        </div>
+
+        {{!-- <div class="result">
+            Search results for {{searchTerm}}
+
+        </div> --}}
+
+
+    </div>
+</div>
+
+
+<script type="module" src="/public/js/listingResults.js"></script>

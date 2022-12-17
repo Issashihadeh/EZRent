@@ -1,0 +1,74 @@
+<div id="main-content">
+    <div class="home">
+        <article class="home-sections">
+            <section class="home-section" id="welcome-section">
+                {{!-- {{> hook hooks.welcome}} --}}
+                <h1 class="welcome-header-1">
+                    Tired of Dealing with Bad Landlords?
+                </h1>
+                <h1 class="welcome-header-2">
+                    Criticize your Landlord Here.
+                </h1>
+                <div>
+                    <div id="changing-container">
+                        <span id="text1"></span>
+                        <span id="text2"></span>
+                    </div>
+
+                    <svg id="changing-filters">
+                        <defs>
+                            <filter id="threshold">
+                                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -140" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+                {{!-- <a class="sign-up-button" href="/register">
+                    Sign Up Now
+                </a> --}}
+            </section>
+            {{!-- <section class="home-section" id="listing-section">
+                {{> hook hooks.listing}}
+                {{> featuredListings listings}}
+            </section> --}}
+            <section class="home-section" id="landlord-section">
+                {{> hook hooks.landlord}}
+                {{#if landlords}}
+                {{> featuredLandlords landlords}}
+                {{else}}
+                Loading...
+                {{/if}}
+            </section>
+            <section class="home-bad-section" id="review-section">
+                {{> hook hooks.review}}
+                {{> badReview badReview}}
+            </section>
+            {{#if logged}}
+            {{else}}
+            <section class="home-signup-section" id="signup-section">
+                {{> hook hooks.signup}}
+                <a class="sign-up-button" href="/register">
+                    Sign up now
+                </a>
+            </section>
+            {{/if}}
+        </article>
+        {{!-- <div class="fixed-section">
+            <div class="prompt">
+                Check us out!
+            </div>
+            <div class="quicknav">
+                <div class="quicknav-button" id="quicknav-up">
+                    <div class="quicknav-image"></div>
+                </div>
+                <div class="quicknav-button" id="quicknav-down">
+                    <div class="quicknav-image"></div>
+                </div>
+            </div>
+        </div> --}}
+    </div>
+</div>
+<script type="module" src="/public/js/homepage.js"></script>

@@ -1,0 +1,11 @@
+<div class="featured-listings" id="featured-listings">
+    {{#each this}}
+        {{> featuredListing this}}
+    {{/each}}
+</div>
+
+<script>
+    document.getElementById("featured-listings").onclick = () => {
+        location.replace("/listingPage");
+    }
+</script>

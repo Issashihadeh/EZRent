@@ -1,0 +1,14 @@
+<div class="edit-profile-container">
+    <form class="edit-profile-form" method="post" action="/users/update" enctype="multipart/form-data">
+        <h2 class="edit-profile-title">Edit Profile</h2>
+        <div class="review-image-container">
+            <label for="profile-image">Profile Image</label>
+            <input type="file" id="profile-image" class="edit-profile-image" name="pic">
+        </div>
+        <div class="review-bio-container">
+            <label for="bio">Bio</label>
+            <textarea class="edit-profile-bio" id="bio" name="bio"></textarea>
+        </div>
+        <input class="edit-profile-submit" type="submit" value="Save">
+    </form>
+</div>

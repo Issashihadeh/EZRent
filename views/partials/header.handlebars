@@ -1,0 +1,73 @@
+<div class="navbar">
+    <div class="nav">
+        <div class="nav-left">
+            <a class="home-btn" href="/"><span>
+                    <div class="nav-title">
+                        <img class="header-logo" src="/public/images/EZRent_Full_Logo_v2.svg" alt="">
+                    </div>
+                </span>
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-search">
+                {{!-- {{> search}} --}}
+                <div class="search">
+                    <div class="dropdown-field">
+                        {{!-- <div class="search-prompt">Search for </div> --}}
+                        <div class="dropdown" id="dropdown">
+                            <div class="dropdown-options" id="dropdown-options">
+                                <div class="dropdown-option" id="listings-option">
+                                    Listings
+                                </div>
+                                <div class="dropdown-option" id="landlords-option">
+                                    Landlords
+                                </div>
+                            </div>
+                            <div class="dropdown-button" id="dropdown-button"></div>
+                        </div>
+                    </div>
+                    <form class="search-bar" id="search-bar">
+                        <input id="search-text" name="search-text" type="search"
+                            placeholder="Enter an address or zip code...">
+                        <input type="button" value="search" id="search-button" />
+                    </form>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <div class="dropdown-menu-container" id="listings-item">
+                            <div class="dropdown-menu-item">
+                                <div class="dropdown-menu-content">
+                                    Listings
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu-container" id="landlords-item">
+                            <div class="dropdown-menu-item">
+                                <span class="dropdown-menu-content">
+                                    Landlords
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="/public/js/search.js"></script>
+            </div>
+            <a class="help-button" href="/help">Help</a>
+            {{#if logged}}
+            <script>
+                console.log("logged: " + {{ logged }});
+            </script>
+            <a id="profile-button" class="login-header-button" href="/users/profilePage/{{profileId}}">Profile</a>
+            <a id="logout-button" class="login-header-button">Log out</a>
+            {{else}}
+            <a id="login-authenticate" class="login-header-button" href="/login"> Login</a>
+            {{/if}}
+        </div>
+    </div>
+</div>
+<script type="module" src="/public/js/header.js"></script>
+
+{{!-- {{#if res.session.admin}}
+<a id="login-authenticate" class="login-header-button" href="/users/logout"> Log out
+    {{else}}
+    <a id="login-authenticate" class="login-header-button" href="/loginpage"> Login
+        {{/if}} --}}

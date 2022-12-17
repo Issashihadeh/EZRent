@@ -1,0 +1,137 @@
+<style>
+    .FAQ-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: inherit;
+    }
+
+    .help-page {
+        /*background-color: #f0f0f0; */
+        color: #031424;
+        cursor: pointer;
+        padding: 30px 20px;
+        width: 60%;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+        margin: auto;
+        font-family: inherit;
+        font-size: 1.8rem;
+    }
+
+    .help-body {
+        margin: auto;
+        /* text-align: center; */
+        width: 50%;
+        padding: auto;
+
+    }
+
+    .help-body p {
+        font-family: inherit;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .active,
+    .help-page:hover {
+        background-color: #80B494;
+    }
+
+    .help-body {
+        padding: 0 18px;
+        background-color: #f0f0f0;
+        display: none;
+        overflow: hidden;
+    }
+
+    .help-page:after {
+        content: '\2796';
+        font-size: 15px;
+        color: #f0f0f0;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2796";
+        color: #031424;
+        /* Unicode character for "minus" sign (-) */
+    }
+
+    .helppage-container {
+        margin-top: 70px;
+    }
+</style>
+
+
+<div class="helppage-container">
+    <h1 style="text-align:center; color:#031424; font-family:inherit; font-size:3rem;">FAQ</h1>
+    <section class="FAQ-container">
+        <div class="FAQ-one">
+            <h1 class="help-page">How do I contact support?</h1>
+            <div class="help-body">
+                <p>Support can be contacted via email for any questions or concerns</p>
+            </div>
+        </div>
+        <hr class="hr-line">
+
+        <div class="FAQ-two">
+            <h1 class="help-page">How can I contact a Landlord?</h1>
+            <div class="help-body">
+                <p>A landlord will have their contact information on the profile page, 
+                    so that people interested will be able to contact him with questions 
+                    or comments via email or text message</p>
+            </div>
+        </div>
+        <hr class="hr-line">
+        <div class="FAQ-three">
+            <h1 class="help-page">How do I find out about certain rules and regulations for a property?</h1>
+            <div class="help-body">
+                <p>Many listings will have a description under the listing page that will
+                   allow for you to read about details specifically to that listing. 
+                   Otherwise the landlord's contact information will be on their profile
+                   page to further assist with any questions about a listing</p>
+            </div>
+        </div>
+        <hr class="hr-line">
+        <div class="FAQ-four">
+            <h1 class="help-page">Why are there no listings when I search for my city?</h1>
+            <div class="help-body">
+                <p>If there are no listings within your city there is a possibility that 
+                    landlords around the area may not have an account with us or there 
+                    are no landlords available within the area</p>
+            </div>
+        </div>
+        <hr class="hr-line">
+        <div class="FAQ-five">
+            <h1 class="help-page">How come I cannot find my landlord ?</h1>
+            <div class="help-body">
+                <p>There is a possibility that the landlord you are looking for does not
+                    have an account with us.
+                </p>
+            </div>
+        </div>
+        <hr class="hr-line">
+    </section>
+</div>
+
+<script>
+    var faq = document.getElementsByClassName("help-page");
+    var i;
+
+    for (i = 0; i < faq.length; i++) {
+        faq[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+
+            /* between hiding and showing the active panel */
+            var body = this.nextElementSibling;
+            if (body.style.display === "block") {
+                body.style.display = "none";
+            } else {
+                body.style.display = "block";
+            }
+        });
+    }
+</script>

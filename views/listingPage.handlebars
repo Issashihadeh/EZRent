@@ -1,0 +1,107 @@
+<div class="listing-page">
+    {{log this}}
+    {{#each listing.pictures}}
+    <center>
+        <img class="listing-image" src="/{{this.imgPath}}"></img>
+    </center>
+    {{/each}}
+    <div class="listing-wrapper">
+        <div class="listing-page-left">
+            <div class="listing-info-left">
+                <div class="address">
+                    {{listing.property.address}}
+                </div>
+                <div class="basic-price">
+                    ${{listing.property.price}}
+                </div>
+                <div class="basic-bed">
+                    Bedrooms: {{listing.property.beds}}</br>
+                    Bathrooms: {{listing.property.baths}}
+                </div>
+                <div class="over-rating">
+                    {{> rating listing.property.listingRating}}
+                </div>
+            </div>
+
+            <div class="desc">
+                <div class="description">
+                    Description:
+
+                </div>
+                <div class="description-bio">
+                    {{listing.property.description}}
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="listing-page-right">
+            <div class="landlord-info" id="landlord-info">
+                <div id="landlord-id" style="position: fixed; display: none;">{{listing.property.landlordId}}</div>
+                <div class="landlord-profile">
+                    <img class="landlord-image" 
+                    {{#if listing.property.profile}} 
+                    src={{listing.property.profile}}
+                    {{else}}
+                    src="/public/images/profile/default.jpeg"
+                    {{/if}}
+                    ></img>
+                    <div class="landlord-text">
+                        <div class="landlord-name">
+                            {{listing.property.landlordName}}
+                        </div>
+                        <div class="landlord-rating-stars">
+                            {{> rating listing.property.landlordRating}}
+                        </div>
+                    </div>
+                </div>
+                <div class="landlord-bio">
+                    {{listing.property.bio}}
+                </div>
+                <div class="contact-info">
+                    {{!-- <div class="listing-profile-phone">
+                        {{listing.property.phone}} <br>
+                    </div> --}}
+                    {{listing.property.email}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews-section">
+        <button class="profile-page-button" id="leave-review-button">Leave a Review</button>
+        <div class="form-popup" id="myForm">
+            <form class="review-form" method="post" action="/listings/review"
+                enctype="application/x-www-form-urlencoded">
+                <button type="button" id="close-button" class="close-button">x</button>
+                <h2 class="edit-profile-title">Leave a Review</h2>
+                <div class="review-rating-container">
+                    <label for="rating">Rate this Landlord (1 - 5):</label>
+                    <input class="post-review-title" id="review-title" type="number" name="rating" value="Enter rating. 1-5"
+                        required>
+                </div>
+                <div class="review-title-container">
+                    <label for="bio">Title:</label>
+                    <input class="post-review-title" id="review-title" type="text" name="title" placeholder="Title">
+                </div>
+                <div class="review-desc-container">
+                    <label for="desc">Description:</label>
+                    <textarea class="post-review-desc" id="review-title" name="description"
+                        placeholder="Enter a review..."></textarea>
+                    <input type="text" name="listingId" style="display: none;"
+                        value="{{listing.property.listingId}}"></input>
+                </div>
+                <input class="edit-profile-submit" id="post-review-submit-button" type="submit" value="Post">
+            </form>
+        </div>
+        <header class="profile-page-box-header">
+            Reviews
+        </header>
+        <div class="reviews">
+            {{#each listing.reviews}}
+            {{> review this}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+<script type="module" src="/public/js/listingPage.js"></script>

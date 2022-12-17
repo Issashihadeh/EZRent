@@ -1,0 +1,24 @@
+<button class="profile-page-button" id="leave-review-button">Leave a Review</button>
+{{log this}}
+<div class="form-popup" id="myForm">
+    <form class="review-form" method="post" action="/users/review" enctype="application/x-www-form-urlencoded">
+        <button type="button" id="close-button" class="close-button">x</button>
+        <h2 class="edit-profile-title">Leave a Review</h2>
+        <div class="review-rating-container">
+            <label for="rating">Rate this Landlord (1 - 5):</label>
+            <input class="post-review-title" id="review-title" type="number" name="rating" value="Enter rating. 1-5" required>
+        </div>
+        <div class="review-title-container">
+            <label for="bio">Title:</label>
+            <input class="post-review-title" id="review-title" type="text" name="title" placeholder="Title">
+        </div>
+        <div class="review-desc-container">
+            <label for="desc">Description:</label>
+            <textarea class="post-review-desc" id="review-title" name="description" placeholder="Enter a review..."></textarea>
+        </div>
+        <input type="text" name="type" style="display: none;" value="landlord"></input>
+        <input type="text" name="landlordId" style="display: none;" value="{{profile.user.id}}"></input>
+        <input class="edit-profile-submit" id="post-review-submit-button" type="submit" value="Post">
+    </form>
+</div>
+<script src="/public/js/postReview.js" type="module"></script>

@@ -1,0 +1,16 @@
+<a href="/listings/{{listingId}}" class="post-anchor">
+    <div class="listing-container" id="listing-card{{listingId}}">
+        <img class="listing-img" {{#if thumbnail}} src="/{{thumbnail}}" {{else}}
+            src="/public/images/listings/images.png" {{/if}}>
+        <di class="listing-container-profile">
+            <div class="listing-card-profile-section">
+                <img class="listing-card-profile-img" {{#if profile}} src="/{{profile}}" {{else}}
+                    src="/public/images/profile/default.jpeg" {{/if}} />
+            </div>
+            <div class="listing-container-profile-text">
+                <p class="listing-card-price">{{price}}</p>
+                <p class="listing-card-city"><b>{{city}}</b></p>
+            </div>
+        </di>
+    </div>
+</a>

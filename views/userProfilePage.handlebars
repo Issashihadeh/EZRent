@@ -1,0 +1,44 @@
+<div class="user-profile-page">
+    {{!-- <header class="profile-page-header">
+        Profile Page
+    </header> --}}    
+    {{log this}}
+    <div class="user-profile-img-info-bio">
+        <div class="user-profile-page-img-info">
+            <div class="user-profile-page-img-section">
+                <img class="user-profile-page-img"
+                    src="/{{profile.user.profilePic}}"
+                    alt="/public/images/profile/default.jpeg">
+            </div>
+            <div class="user-profile-page-info">
+                <p class="user-profile-page-person-name">{{profile.user.name}}</p>
+                <h4>{{profile.user.email}}</h4>
+                <h4>{{profile.user.phone}}</h4>
+                {{!-- <p class="profile-page-person-rating">7/10</p> --}}
+            </div>
+        </div>
+        <div class="user-profile-page-bio-box">
+            <header class="user-profile-page-box-header">
+                Learn about {{profile.user.name}}
+            </header>
+            <p class="user-bio-description">
+                {{profile.user.bio}}
+            </p>
+        </div>
+    </div>
+    <div class="profile-page-buttons-section">
+            <button class="profile-page-button" id="edit-profile-button" onclick="location.replace('/editProfile')">Edit Profile</button>
+        </div>
+    <div class="user-profile-btn-reviews-listings">
+        <div class="user-profile-page-box">
+            <header class="user-profile-page-box-header">
+                Written Reviews
+            </header>
+            {{#each profile.reviews as |review index|}}
+            {{log this}}
+            <h4> Review {{listItem index}}</h4>
+            {{> userReview review}}
+            {{/each}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+    <di class="container-profile">
+        <p class="landlord-name">{{fullName}}</p>
+        <div class="landlord-rating">Rating: {{rating}}</div>
+    </di>
+    <a href="/users/profilePage/{{landlordId}}">
+        <img class="landlord-img" {{#if img}} src={{img}} {{else}} src="/public/images/profile/default.jpeg"
+            {{/if}}></a>
+</div>

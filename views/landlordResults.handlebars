@@ -1,0 +1,15 @@
+<div id="search_results_main">
+    {{!-- <div class="landlord-search-bar">
+        {{> search}}
+    </div> --}}
+    <div id="search_results_card_section">
+        <div class="result">
+            Search results for "{{searchTerm}}":
+        </div>
+        <div id="search_results_cards">
+            {{#each results}}
+            {{> landlordCard this}}
+            {{/each}}
+        </div>
+    </div>
+</div>

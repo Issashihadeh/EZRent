@@ -1,0 +1,38 @@
+<div class="search">
+    <div class="dropdown-field">
+        {{!-- <div class="search-prompt">Search for </div> --}}
+        <div class="dropdown" id="dropdown">
+            <div class="dropdown-options" id="dropdown-options">
+                <div class="dropdown-option" id="listings-option">
+                    Listings
+                </div>
+                <div class="dropdown-option" id="landlords-option">
+                    Landlords
+                </div>
+            </div>
+            <div class="dropdown-button" id="dropdown-button"></div>
+        </div>
+    </div>
+    <form class="search-bar" id="search-bar">
+        <input id="search-text" name="search-text" type="search" placeholder="Enter an address or zip code...">
+        <input type="button" value="search" id="search-button" />
+    </form>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <div class="dropdown-menu-container" id="listings-item">
+            <div class="dropdown-menu-item">
+                <div class="dropdown-menu-content">
+                    Listings
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-menu-container" id="landlords-item">
+            <div class="dropdown-menu-item">
+                <span class="dropdown-menu-content">
+                    Landlords
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/public/js/search.js"></script>

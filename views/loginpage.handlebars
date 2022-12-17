@@ -1,0 +1,149 @@
+<div class="open-body">
+    {{!-- <img src="images\pic1.jpg" class="login-background"> --}}
+
+    <div class="Overbox">
+        <form method= "POST" action="/users/login" class="form-login">
+            <img src="images/logo.png" class="logo-login">
+
+
+
+            <h2>Login</h2>
+            <div class="input-name">
+
+                <input type="text" name="email" placeholder="Email Address" id="loginUser" required>
+                <!-- <p>Password</p> -->
+                <!-- <input type = "text" name="" placeholder="E-mail address"> -->
+                <!-- <p>Password</p> -->
+                <input type="password" name="password" placeholder="Password" id="loginPassword" required>
+                <!-- <p>cPassword</p> -->
+                <!-- <input type = "text" name="" placeholder="Confirm Password"> -->
+
+            </div>
+            {{!-- <button type="button" class="submit-btn" href="/"> Login</button> --}}
+            {{!-- <a class="submit-btn" href="/">Login</a> --}}
+            <input type="submit" value="Login" class="login-submit-btn">
+            <div class=toRegister>
+                <p class="login-txt-login">Don't have an account? <a href="/register" class="bud-login">Register</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+{{!-- <style>
+    .background {}
+
+    .Overbox {
+
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+        width: 90vw;
+    }
+</style> --}}
+
+{{!-- <style>
+    
+
+    .logo-login {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: absolute;
+        top: -90px;
+        left: calc(46% - 50px);
+    }
+
+    h2 {
+        position: absolute;
+        top: 5%;
+        left: 33%;
+        text-align: center;
+        letter-spacing: 5px;
+        font-size: 68px;
+        color: rgb(83, 131, 104);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style: oblique;
+
+    }
+
+    .form-login .input-name input {
+        width: 105%;
+        padding: 0px;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        border: none;
+        border-bottom: 1px solid #29282872;
+        outline: none;
+        background-color: transparent;
+        height: 50px;
+        margin-bottom: 30px;
+        font-size: xx-large;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .submit-btn {
+        position: absolute;
+        top: 70%;
+        left: 15%;
+        display: inline-block;
+        height: 60px;
+        width: 350px;
+        text-align: center;
+
+        border-radius: 30px;
+        color: #EAEFF2;
+        ;
+        border: none;
+        font-size: 40px;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: rgb(83, 131, 104);
+        margin-bottom: 10px;
+        margin-left: 10px;
+        /* padding: 20px; */
+    }
+
+    .txt-login {
+        position: absolute;
+        top: 80%;
+        left: 15%;
+        color: black;
+        margin-left: 70px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+
+    .bud-login {
+        color: rgb(83, 131, 104);
+    }
+
+    .toRegister {
+
+        border-bottom: 2px solid #2d2e2e;
+        border-bottom-width: 10px;
+
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+
+    
+</style> --}}

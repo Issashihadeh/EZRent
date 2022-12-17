@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.btn.active {
+  float: left;
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+.btn {
+  overflow: hidden;
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;border-radius: 50%;
+  display: none;
+  }
+
+.filterDiv{
+    display: none;
+}
+.show {
+  display: block;
+}
+.slidecontainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<div id="BtnContainer">
+    <button class="btn active" onclick="filterSelect"('all')>Search Filters</button>
+
+    <button class="btn" onclick="filterSelect" ('Price')>Price</button>
+    <button class="btn" onclick="filterSelect" ('Rating')>Rating</button>
+    <button class="btn" onclick="filterSelect" ('Beds')>Beds</button>
+    <button class="btn" onclick="filterSelect" ('Baths')>Baths</button>
+</div>
+<div class="slidecontainer">
+    <div class="filterDiv Price"><input type="range" min="1" max="5" value="5" class="slider" id="myRange"></div>
+</div>
+<script>
+  filterSelect("all")
+function filterSelect(c) {
+  var x, i;
+  x = document.getElementsByClassName("btn");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    Remove(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) Add(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function Add(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function Remove(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+</script>
+</body>
+</html>
